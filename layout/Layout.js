@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Link from "next/link"
 import Modal from "react-modal"
 import { ToastContainer } from "react-toastify"
 import Sidebar from "../components/Sidebar"
@@ -30,12 +31,16 @@ export default function Layout({children, pagina}) {
     <>
       <Head>
         <title>Café - {pagina}</title>
-        <meta name="description" content="Proyecto Quiosco App, usando Next.js, Prisma, TS-Node, React-Modal, React-Toastify, Axios, Context API, Tailwind CSS"/>
+        <meta name="description" content="Proyecto Quiosco App (una sección para la generación de ordenes y otra para la administración de las mismas), usando Next.js, Prisma, TS-Node, React-Modal, React-Toastify, Axios, Context API, Tailwind CSS, useSWR (para la sección de administración de ordenes)."/>
       </Head>
 
       <div className="md:flex">
-        <aside className="md:w-4/12 xl:w-1/4 2xl:w-1/5">
+        <aside className="md:w-4/12 xl:w-1/4 2xl:w-1/5 py-5">
           <Sidebar/>
+
+          <Link href="/admin">
+            <a className="px-5 text-2xl font-bold" target="_blank">Administrar Ordenes</a>
+          </Link>
         </aside>
 
         <main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">

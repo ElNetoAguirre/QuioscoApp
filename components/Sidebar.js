@@ -15,7 +15,7 @@ const Sidebar = () => {
         alt="imagen logotipo"
       />
 
-      <nav className="mt-10">
+      <nav className="my-10">
         {categorias.map(categoria=> (
           <Categoria
             key={categoria.id}
